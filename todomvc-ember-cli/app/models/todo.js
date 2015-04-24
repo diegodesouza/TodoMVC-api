@@ -7,7 +7,7 @@ var Todo = DS.Model.extend({
 });
 
 Todo.reopenClass({
-  FIXTURE: [
+  FIXTURES: [
     {
       id: 1,
       title: 'Do something interesting today',
@@ -21,6 +21,11 @@ Todo.reopenClass({
     {
       id: 3,
       title: 'What to do',
+      isCompleted: false
+    },
+    {
+      id: 4,
+      title: 'Last',
       isCompleted: false
     }
   ]

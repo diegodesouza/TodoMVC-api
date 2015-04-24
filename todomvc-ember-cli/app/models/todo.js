@@ -1,7 +1,29 @@
 import DS from "ember-data";
 
 // todo model
-export default DS.Model.extend({
+var Todo = DS.Model.extend({
   title: DS.attr('string'),
   is_completed: DS.attr('boolean')
 });
+
+Todo.reopenClass({
+  FIXTURE: [
+    {
+      id: 1,
+      title: 'Do something interesting today',
+      isCompleted: true
+    },
+    {
+      id: 2,
+      title: 'Finish this app',
+      isCompleted: false
+    },
+    {
+      id: 3,
+      title: 'What to do',
+      isCompleted: false
+    }
+  ]
+});
+
+export default Todo;

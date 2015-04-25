@@ -6,14 +6,13 @@
       id="new-todo"
       placeholder="What needs to be done?"
       value=newTitle
-      action="createTodo"
-    }}
+      action="createTodo"}}
   </header>
 
- <section id="main">
-   {{outlet}}
-   {{input type="checkbox" id="toggle-all" checked=AllAreDone}}
- </section>
+  <section id="main">
+    {{outlet}}
+    {{input type="checkbox" id="toggle-all" checked=allAreDone}}
+  </section>
 
   <footer id="footer">
     <span id="todo-count">

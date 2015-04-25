@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-  action: {
+  actions: {
     editTodo: function() {
       this.set('isEditing', true);
     },

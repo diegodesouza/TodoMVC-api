@@ -17,13 +17,16 @@ export default Ember.ArrayController.extend({
 
       todo.save();
     },
-
     clearCompleted: function() {
       var completed = this.filterBy('isCompleted', true);
       completed.invoke('deleteRecord');
-      completed.invode('save');
+      completed.invoke('save');
     }
   },
+
+  allAreDone: function(key, value) {
+    return !!this.get('length') && this.isEvery('isCompleted');
+  }.property('@each.isCompleted'),
 
   hasCompleted: function() {
     return this.get('completed') > 0;
@@ -41,4 +44,4 @@ export default Ember.ArrayController.extend({
     var remaining = this.get('remaining');
     return remaining === 1 ? 'item' : 'items';
   }.property('remaining')
-});
+})
